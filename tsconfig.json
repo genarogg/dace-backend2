@@ -7,10 +7,12 @@
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types", "src/types"],
 
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@route/*": ["src/routers/*"],
-      "@controller/*": ["src/routers/*"]
+      "@controller/*": ["controllers/*"],
+      "@router": ["routers/index.ts"],
+      "@models": ["models/index.ts"],
+      "@db": ["config/db-conenction.ts"]
     }
   },
 

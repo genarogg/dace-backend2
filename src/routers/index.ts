@@ -2,4 +2,6 @@
 
 import inicioRouter from "./inicio";
 
-export { inicioRouter };
+import registroRouter from "./auth/registro";
+
+export { inicioRouter, registroRouter };

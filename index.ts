@@ -34,14 +34,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Conexión a la base de datos
-import sequelize from "./src/config/db-conenction";
+import sequelize from "@db";
 
 sequelize.sync({ logging: false }).then(() => {
   console.log(chalk.cyan("db conectada!"));
 });
 
 // Importar rutas
-import { inicioRouter } from "@route/index";
+import { inicioRouter } from "@router";
 
 app.use("/", inicioRouter);
 
