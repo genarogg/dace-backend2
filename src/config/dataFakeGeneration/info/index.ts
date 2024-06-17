@@ -2,4 +2,6 @@ import carreras from "./carreras";
 
 import materias from "./materias";
 
-export { carreras, materias };
+import usuario from "./usuarios";
+
+export { carreras, materias, usuario };

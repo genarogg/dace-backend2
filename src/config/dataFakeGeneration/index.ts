@@ -1,16 +1,26 @@
 import chalk from "chalk";
-// import crearUsuario from "./crearUsuarios";
+//
 // import crearAdmin from "./crearAdmin";
 // import crearProfesor from "./crearProfesor";
 // import asignarProfesoresAMaterias from "./addProfesorAMateria";
-// import asignarMateriasAEstudiante from "./addEstudianteMateria";
-// import asignarHorariosAMaterias from "./asignarHorariosAMaterias";
+//
+//
 // import crearProfesorDemo from "./addProfesorDemo";
 
 import { Usuario } from "../../models";
 import populateCarreras from "./populateCarreras";
 import populateMaterias from "./populateMaterias";
 
+import papulateProfesor from "./papulateProfesor";
+import crearProfesorDemo from "./crearProfesorDemo";
+import asignarProfesoresAMaterias from "./asignarProfesoresAMaterias";
+
+import asignarHorariosAMaterias from "./asignarHorariosAMaterias";
+
+import crearEstudiantes from "./crearEstudiantes";
+
+/* import asignarMateriasAEstudiante from "./asignarMateriasAEstudiante";
+ */
 const dataFakeGeneration = async (cantidad: number, url: string) => {
   try {
     const usuarioExistente = await Usuario.findOne({
@@ -26,14 +36,14 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
 
     await populateCarreras();
     await populateMaterias();
-    // await crearProfesorDemo();
+    await crearProfesorDemo();
 
-    // await crearProfesor(cantidad);
-    //
-    // await asignarProfesoresAMaterias();
-    // await crearUsuario(cantidad * 20);
-    // await asignarMateriasAEstudiante();
-    // await asignarHorariosAMaterias();
+    await papulateProfesor(cantidad);
+    await asignarProfesoresAMaterias();
+    await asignarHorariosAMaterias();
+
+    await crearEstudiantes(cantidad * 20);
+    /* await asignarMateriasAEstudiante(); */
 
     // await crearAdmin();
     console.log(chalk.cyan("Data fake generada exitosamente"));
