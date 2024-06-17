@@ -2,5 +2,6 @@
 
 import Usuario from "./usuario/Usuario";
 import CarrerasDelUsuario from "./usuario/CarrerasDelUsuario";
+import Carrera from "./carrera/Carrera";
 
-export { Usuario, CarrerasDelUsuario };
+export { Usuario, CarrerasDelUsuario, Carrera };

@@ -1,4 +1,6 @@
 import { registroPost } from "./auth/registro";
 import { loginPost } from "./auth/login";
 
-export { registroPost, loginPost };
+import verificarTokenPost from "./auth/verificarToken";
+
+export { registroPost, loginPost, verificarTokenPost };

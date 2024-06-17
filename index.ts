@@ -4,6 +4,8 @@ clear();
 
 import express, { Request, Response } from "express";
 
+import dataFakeGeneration from "./src/config/dataFakeGeneration";
+
 import chalk from "chalk";
 import cors from "cors";
 
@@ -11,7 +13,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 
-const { PORT: PORT_ENV, CORS_URL } = process.env;
+const { PORT: PORT_ENV, CORS_URL, NODE_ENV } = process.env;
 
 // variables de entorno
 const PORT = PORT_ENV || 3000;
@@ -56,4 +58,16 @@ app.listen(PORT, () => {
   console.log(
     chalk.green.bold(`El servidor esta corriendo http://localhost:${PORT}`)
   );
+
+  //Generando datos falsos
+  setTimeout(async () => {
+    if (!NODE_ENV) {
+      console.log("No se puede ejecutar en producción");
+      return;
+    }
+
+    console.log("Ejecutando en modo desarrollo");
+
+    dataFakeGeneration(100, "http://localhost:8000");
+  }, 1000);
 });
