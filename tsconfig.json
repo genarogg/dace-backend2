@@ -12,10 +12,11 @@
       "@controller/*": ["controllers/*"],
       "@router": ["routers/index.ts"],
       "@models": ["models/index.ts"],
-      "@db": ["config/db-conenction.ts"]
+      "@db": ["config/db-conenction.ts"],
+      "@fn": ["functions/index.ts"]
     }
   },
 
-  "include": ["*.ts"],
+  "include": ["*.ts", "src/**/*.ts"],
   "exclude": ["node_modules"]
 }

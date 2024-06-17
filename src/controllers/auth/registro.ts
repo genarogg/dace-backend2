@@ -30,6 +30,8 @@ const registroPost = async (req: Request, res: Response) => {
         usuarioId: usuario.id,
       });
 
+      //@Bitacora
+
       res.status(201).json({ mensaje: "Usuario creado" });
     })
     .catch((err) => {
