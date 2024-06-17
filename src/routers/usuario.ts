@@ -3,12 +3,13 @@ import express from "express";
 const router = express.Router();
 
 import {
-/*   addProfesorAMateriaGet,
+  /*   addProfesorAMateriaGet,
   addProfesorAMateriaPost,
   usersGet,
   usersUpdatePut,
   horarioGet, */
-  dataUserGet
+  dataUserGet,
+  updateUser,
 } from "@controller/usuario";
 
 // // router.get("/add-materia-a-profesor", addProfesorAMateriaGet);
@@ -17,7 +18,7 @@ import {
 
 router.get("/data", dataUserGet);
 
-// // router.put("/data", usersUpdatePut);
+router.put("/data", updateUser);
 
 // // router.get("/data", usersGet);
 
