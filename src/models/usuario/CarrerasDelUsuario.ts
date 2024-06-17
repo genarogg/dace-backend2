@@ -3,8 +3,9 @@ import sequelize from "@db";
 
 class CarrerasDelUsuario extends Model {
   public id!: number;
-  public nombre!: string;
+  public nombreCarrera!: string;
   public createdAt!: Date;
+  public usuarioId!: number; // Clave foránea
 }
 
 CarrerasDelUsuario.init(
@@ -14,7 +15,7 @@ CarrerasDelUsuario.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    nombre: {
+    nombreCarrera: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,9 +23,13 @@ CarrerasDelUsuario.init(
       type: DataTypes.DATE,
       defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
+    usuarioId: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
   },
   {
-    tableName: "CarrerasDelUsuarios",
+    tableName: "CarrerasDelUsuario",
     sequelize: sequelize,
   }
 );

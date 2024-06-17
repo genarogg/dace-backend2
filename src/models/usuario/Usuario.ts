@@ -4,16 +4,15 @@ import sequelize from "@db";
 import CarrerasDelUsuario from "./CarrerasDelUsuario";
 
 class Usuario extends Model {
+  //información de la cuenta
   public id!: number;
   public cedula!: number;
   public correo!: string;
   public contrasena!: string;
   public createdAt!: Date;
-  public esEstudiante!: boolean;
-  public esProfesor!: boolean;
-  public esAdmin!: boolean;
   public sede!: string;
 
+  //información personal
   public nombre!: string;
   public segundoNombre!: string;
   public apellido!: string;
@@ -22,8 +21,12 @@ class Usuario extends Model {
   public telefono!: string;
   public fechaDeNacimiento!: Date;
   public direccion!: string;
-
   public parroquia!: string;
+
+  //roles
+  public esEstudiante!: boolean;
+  public esProfesor!: boolean;
+  public esAdmin!: boolean;
 }
 
 Usuario.init(
@@ -47,7 +50,7 @@ Usuario.init(
     },
 
     segundoApellido: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING, // Cambiado de INTEGER a STRING
       allowNull: true,
     },
     cedula: {

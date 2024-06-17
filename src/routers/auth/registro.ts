@@ -4,6 +4,6 @@ const router = express.Router();
 
 import { registroPost } from "@controller/auth";
 
-router.post("/", registroPost);
+router.post("/register", registroPost);
 
 export default router;
