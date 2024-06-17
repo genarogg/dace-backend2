@@ -50,7 +50,7 @@ Usuario.init(
     },
 
     segundoApellido: {
-      type: DataTypes.STRING, // Cambiado de INTEGER a STRING
+      type: DataTypes.STRING,
       allowNull: true,
     },
     cedula: {

@@ -19,19 +19,6 @@ ProfesorMateria.init(
       primaryKey: true,
     },
 
-    UsuarioId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
-    MateriaId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
-    CarreraId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
-
     periodo: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -40,12 +27,6 @@ ProfesorMateria.init(
   {
     tableName: "ProfesorMateria",
     sequelize: sequelize,
-    indexes: [
-      {
-        unique: true,
-        fields: ["UsuarioId", "MateriaId"],
-      },
-    ],
   }
 );
 

@@ -13,7 +13,7 @@ const papulateProfesor = async (cantidad: number) => {
     return;
   }
 
-  for (let i = 1; i <= cantidad; i++) {
+  for (let i = 2; i <= cantidad; i++) {
     const { nombre, apellido, cedula, correo, telefono } = usuario();
     const contrasena = await bcrypt.hash(`contrasena${i}`, 10);
 

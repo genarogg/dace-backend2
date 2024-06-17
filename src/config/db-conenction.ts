@@ -14,3 +14,5 @@ sequelize
   .catch((error) => console.error(chalk.red("Error al sincronizar:", error)));
 
 export default sequelize;
+
+

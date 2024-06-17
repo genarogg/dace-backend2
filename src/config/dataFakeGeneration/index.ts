@@ -1,6 +1,6 @@
 import chalk from "chalk";
 //
-// import crearAdmin from "./crearAdmin";
+
 // import crearProfesor from "./crearProfesor";
 // import asignarProfesoresAMaterias from "./addProfesorAMateria";
 //
@@ -21,6 +21,9 @@ import crearEstudiantes from "./crearEstudiantes";
 
 /* import asignarMateriasAEstudiante from "./asignarMateriasAEstudiante";
  */
+
+import crearAdmin from "./crearAdmin";
+
 const dataFakeGeneration = async (cantidad: number, url: string) => {
   try {
     const usuarioExistente = await Usuario.findOne({
@@ -45,7 +48,7 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
     await crearEstudiantes(cantidad * 20);
     /* await asignarMateriasAEstudiante(); */
 
-    // await crearAdmin();
+    await crearAdmin();
     console.log(chalk.cyan("Data fake generada exitosamente"));
   } catch (error) {
     console.log(chalk.red("Error al generar data fake"), error);

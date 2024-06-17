@@ -68,6 +68,6 @@ app.listen(PORT, () => {
 
     console.log("Ejecutando en modo desarrollo");
 
-    dataFakeGeneration(100, "http://localhost:8000");
+  /*   dataFakeGeneration(100, "http://localhost:8000"); */
   }, 1000);
 });

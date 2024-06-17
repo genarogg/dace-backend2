@@ -14,14 +14,7 @@ EstudianteMateria.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    usuarioId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
-    materiaId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
+
     nota: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: true,
@@ -38,9 +31,9 @@ EstudianteMateria.init(
   }
 );
 
-/* import { Usuario, Materia } from "@models";
+import { Usuario, Materia } from "@models";
 
 EstudianteMateria.belongsTo(Usuario, { foreignKey: "UsuarioId" });
-EstudianteMateria.belongsTo(Materia, { foreignKey: "MateriaId" }); */
+EstudianteMateria.belongsTo(Materia, { foreignKey: "MateriaId" });
 
 export default EstudianteMateria;

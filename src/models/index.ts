@@ -7,16 +7,16 @@ import Carrera from "./carrera/Carrera";
 import Materia from "./carrera/Materia";
 
 import ProfesorMateria from "./usuario/relacion/ProfesorMateria";
-import Horario from "./carrera/Horario";
+/* import Horario from "./carrera/Horario"; */
 
-/* import EstudianteMateria from "./usuario/relacion/EstudianteMateria";
- */
+import EstudianteMateria from "./usuario/relacion/EstudianteMateria";
+
 export {
   Usuario,
   CarrerasDelUsuario,
   Carrera,
   Materia,
   ProfesorMateria,
-  Horario,
- /*  EstudianteMateria */
+  /*Horario, */
+  EstudianteMateria,
 };

@@ -1,4 +1,4 @@
-/* import { Usuario, Materia, EstudianteMateria } from "@models";
+import { Usuario, Materia, EstudianteMateria } from "@models";
 
 const asignarMateriasAEstudiante = async () => {
   // Obtener todos los estudiantes
@@ -40,4 +40,3 @@ const asignarMateriasAEstudiante = async () => {
 
 export default asignarMateriasAEstudiante;
 
- */
