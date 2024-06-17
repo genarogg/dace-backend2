@@ -23,7 +23,7 @@ const asignarMateriasAEstudiante = async () => {
         continue;
       }
 
-      // Asignar la materia al estudiante
+      // Asignar la materia al estuddiante
       await EstudianteMateria.create({
         usuarioId: estudiante.id,
         materiaId: materia.id,

@@ -19,8 +19,8 @@ import asignarHorariosAMaterias from "./asignarHorariosAMaterias";
 
 import crearEstudiantes from "./crearEstudiantes";
 
-/* import asignarMateriasAEstudiante from "./asignarMateriasAEstudiante";
- */
+import asignarMateriasAEstudiante from "./asignarMateriasAEstudiante";
+
 
 import crearAdmin from "./crearAdmin";
 
@@ -46,7 +46,7 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
     await asignarHorariosAMaterias();
 
     await crearEstudiantes(cantidad * 20);
-    /* await asignarMateriasAEstudiante(); */
+    await asignarMateriasAEstudiante();
 
     await crearAdmin();
     console.log(chalk.cyan("Data fake generada exitosamente"));

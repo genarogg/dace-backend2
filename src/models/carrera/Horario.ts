@@ -28,15 +28,15 @@ Horario.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    materiaId: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-    },
   },
   {
     tableName: "horarios",
     sequelize: sequelize,
   }
 );
+
+import { Materia } from "@models";
+
+Horario.belongsTo(Materia, { foreignKey: "MateriaId" });
 
 export default Horario;

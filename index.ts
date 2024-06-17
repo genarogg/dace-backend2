@@ -43,10 +43,11 @@ sequelize.sync({ logging: false }).then(() => {
 });
 
 // Importar rutas
-import { inicioRouter, authRouter } from "@router";
+import { inicioRouter, authRouter, usuarioRouter } from "@router";
 
 app.use("/", inicioRouter);
 app.use("/auth", authRouter);
+app.use("/user", usuarioRouter);
 
 // Middleware de manejo de errores
 app.use((err: any, req: Request, res: Response, next: Function) => {
@@ -68,6 +69,6 @@ app.listen(PORT, () => {
 
     console.log("Ejecutando en modo desarrollo");
 
-  /*   dataFakeGeneration(100, "http://localhost:8000"); */
+    dataFakeGeneration(100, "http://localhost:8000");
   }, 1000);
 });
