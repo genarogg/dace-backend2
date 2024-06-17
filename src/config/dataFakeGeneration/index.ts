@@ -7,8 +7,9 @@ import chalk from "chalk";
 // import asignarHorariosAMaterias from "./asignarHorariosAMaterias";
 // import crearProfesorDemo from "./addProfesorDemo";
 
-import { Usuario } from "@models";
+import { Usuario } from "../../models";
 import populateCarreras from "./populateCarreras";
+import populateMaterias from "./populateMaterias";
 
 const dataFakeGeneration = async (cantidad: number, url: string) => {
   try {
@@ -24,11 +25,11 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
     }
 
     await populateCarreras();
-
+    await populateMaterias();
     // await crearProfesorDemo();
 
     // await crearProfesor(cantidad);
-    // await populateMaterias();
+    //
     // await asignarProfesoresAMaterias();
     // await crearUsuario(cantidad * 20);
     // await asignarMateriasAEstudiante();

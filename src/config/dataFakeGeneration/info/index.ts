@@ -1,3 +1,5 @@
 import carreras from "./carreras";
 
-export { carreras };
+import materias from "./materias";
+
+export { carreras, materias };
