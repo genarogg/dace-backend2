@@ -59,6 +59,7 @@ Materia.init(
       allowNull: true,
       defaultValue: "seccion unica",
     },
+    
   },
   {
     tableName: "materias",

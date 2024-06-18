@@ -20,6 +20,7 @@ const populateMaterias = async () => {
           uc: materia.uc,
           prelaciones: materia.prelaciones,
           semestre: parseInt(semestre.split(" ")[1]), // Asume que el semestre siempre está en el formato "Semestre X"
+          seccion: (Math.floor(Math.random() * 5) + 1).toString(),
         });
       }
     }

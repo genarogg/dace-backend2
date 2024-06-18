@@ -44,9 +44,9 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
     await papulateProfesor(cantidad);
     await asignarProfesoresAMaterias();
     await asignarHorariosAMaterias();
-/* 
+
     await crearEstudiantes(cantidad * 20);
-    await asignarMateriasAEstudiante(); */
+    await asignarMateriasAEstudiante();
 
     await crearAdmin();
     console.log(chalk.cyan("Data fake generada exitosamente"));

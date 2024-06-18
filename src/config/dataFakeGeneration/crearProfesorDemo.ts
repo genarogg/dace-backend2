@@ -11,7 +11,7 @@ const crearProfesorDemo = async () => {
     telefono: "0412-1234567",
     contrasena: await bcrypt.hash("demo", 10),
     esProfesor: 1,
-    esEstudiante: 1,
+    /* esEstudiante: 1, */
     status: "active",
   };
 

@@ -29,10 +29,32 @@ const consultarHorario = async (req: Request, res: Response) => {
       return;
     }
 
-    console.log(id);
+    // const id = 1;
     const usuarioh = await UsuarioFn.buscarHorarioDelUsuario(id);
 
-    res.json(usuarioh);
+    const resultado = usuarioh.map((item: any) => ({
+      profesor: {
+        id: item.profesor.id,
+        nombre: item.profesor.nombre,
+        apellido: item.profesor.apellido,
+        cedula: item.profesor.cedula,
+      },
+      materia: {
+        id: item.materia.id,
+        nombre: item.materia.nombre,
+        seccion: item.materia.seccion,
+        codigo: item.materia.codigo,
+      },
+      horario: item.horarios.map((horario: any) => ({
+        id: horario.id,
+        dia: horario.dia,
+        horaInicio: horario.horaInicio,
+        horaFin: horario.horaFin,
+        aula: horario.aula,
+      })),
+    }));
+
+    res.status(200).json(resultado);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Hubo un error al obtener los horarios" });

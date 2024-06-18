@@ -28,6 +28,11 @@ Horario.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+
+    aula: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: "horarios",

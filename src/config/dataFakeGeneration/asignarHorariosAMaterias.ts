@@ -27,6 +27,7 @@ const asignarHorariosAMaterias = async () => {
         horaInicio: horaInicio,
         horaFin: horaFin,
         MateriaId: materia.id,
+        aula: (Math.floor(Math.random() * 15) + 1).toString(),
       });
     }
   }

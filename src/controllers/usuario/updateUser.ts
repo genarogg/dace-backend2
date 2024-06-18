@@ -22,7 +22,7 @@ const updateUser = async (req: Request, res: Response): Promise<any> => {
 
     const { id } = usuario;
 
-    const user = await Usuario.findOne({ where: { id } });
+    const user = await Usuario.findByPk(id);
 
     if (!user) {
       res.status(404).json({ error: "Usuario no encontrado" });
