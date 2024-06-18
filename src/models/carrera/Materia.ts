@@ -10,6 +10,7 @@ class Materia extends Model {
   public horasSemanales!: number;
   public uc!: number;
   public prelaciones!: string;
+  public seccion!: string;
   public semestre!: number;
 }
 
@@ -51,6 +52,12 @@ Materia.init(
     semestre: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+
+    seccion: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "seccion unica",
     },
   },
   {

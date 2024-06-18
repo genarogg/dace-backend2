@@ -11,6 +11,8 @@ import Horario from "./carrera/Horario";
 
 import EstudianteMateria from "./usuario/relacion/EstudianteMateria";
 
+import UsuarioFn from "./usuario/fn/UsuarioFn";
+
 export {
   Usuario,
   CarrerasDelUsuario,
@@ -19,4 +21,5 @@ export {
   ProfesorMateria,
   Horario,
   EstudianteMateria,
+  UsuarioFn
 };

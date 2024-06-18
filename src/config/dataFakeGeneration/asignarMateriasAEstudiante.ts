@@ -12,7 +12,7 @@ const asignarMateriasAEstudiante = async () => {
     for (let materia of materias) {
       // Verificar si la materia ya tiene 15 estudiantes
       const count = await EstudianteMateria.count({
-        where: { materiaId: materia.id },
+        where: { MateriaId: materia.id },
       });
       if (count >= 15) {
         continue;
@@ -23,10 +23,10 @@ const asignarMateriasAEstudiante = async () => {
         continue;
       }
 
-      // Asignar la materia al estuddiante
+      // Asignar la materia al estudiante
       await EstudianteMateria.create({
-        usuarioId: estudiante.id,
-        materiaId: materia.id,
+        UsuarioId: estudiante.id,
+        MateriaId: materia.id,
         periodo: "2021-1",
       });
 
@@ -39,4 +39,3 @@ const asignarMateriasAEstudiante = async () => {
 };
 
 export default asignarMateriasAEstudiante;
-

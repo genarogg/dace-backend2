@@ -20,11 +20,13 @@ const asignarHorariosAMaterias = async () => {
       ":00";
 
     // Asignar el horario a la materia
+
+  
     await Horario.create({
       dia: dia,
       horaInicio: horaInicio,
       horaFin: horaFin,
-      materiaId: materia.id,
+      MateriaId: materia.id,
     });
   }
 

@@ -6,6 +6,7 @@ const verificarTokenPost = async (
   res: Response
 ): Promise<Response> => {
  
+
   const usuario = verificarToken(req.headers.authorization, res);
 
   if (!usuario) {
