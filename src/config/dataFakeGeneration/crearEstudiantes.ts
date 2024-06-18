@@ -27,7 +27,7 @@ const crearEstudiantes = async (cantidad: number) => {
       esEstudiante: 1,
       status: "active",
       sede: "Central",
-      carrera: { nombre: "Ingeniería en Computación" },
+      carrera: "Ingeniería en Computación",
     };
 
     await Usuario.create(newUser);

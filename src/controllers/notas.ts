@@ -1,4 +1,5 @@
 import getNotasProfesor from "./notas/getNotasProfesor";
 import cargarNotasPut from "./notas/cargarNotasPut";
+import notasCargadasGet from "./notas/notasCargadasGet";
 
-export { getNotasProfesor, cargarNotasPut };
+export { getNotasProfesor, cargarNotasPut, notasCargadasGet };

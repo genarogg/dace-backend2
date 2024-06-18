@@ -60,6 +60,7 @@ Materia.init(
       defaultValue: "seccion unica",
     },
     
+    
   },
   {
     tableName: "materias",

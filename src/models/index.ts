@@ -13,6 +13,8 @@ import EstudianteMateria from "./usuario/relacion/EstudianteMateria";
 
 import UsuarioFn from "./usuario/fn/UsuarioFn";
 
+import BitacoraLogin from "./bitacora/BitacoraLogin";
+
 export {
   Usuario,
   CarrerasDelUsuario,
@@ -21,5 +23,6 @@ export {
   ProfesorMateria,
   Horario,
   EstudianteMateria,
-  UsuarioFn
+  UsuarioFn,
+  BitacoraLogin,
 };

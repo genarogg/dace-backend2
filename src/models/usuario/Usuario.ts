@@ -111,18 +111,16 @@ Usuario.init(
       type: DataTypes.DATE,
       defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
     },
+
+    /* carrera: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }, */
   },
   {
     tableName: "usuarios",
     sequelize: sequelize,
   }
 );
-
-// Establece la relación
-Usuario.hasMany(CarrerasDelUsuario, {
-  sourceKey: "id",
-  foreignKey: "usuarioId",
-  as: "carreras",
-});
 
 export default Usuario;

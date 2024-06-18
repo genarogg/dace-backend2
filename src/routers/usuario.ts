@@ -11,6 +11,7 @@ import {
   dataUserGet,
   updateUser,
   consultarHorario,
+  getBitacora
 } from "@controller/usuario";
 
 // // router.get("/add-materia-a-profesor", addProfesorAMateriaGet);
@@ -22,6 +23,8 @@ router.get("/data", dataUserGet);
 router.put("/data", updateUser);
 
 router.get("/horario", consultarHorario);
+
+router.get("/bitacora", getBitacora);
 
 // // router.get("/horario", horarioGet);
 

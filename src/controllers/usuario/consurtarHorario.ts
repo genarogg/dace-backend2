@@ -31,13 +31,24 @@ const consultarHorario = async (req: Request, res: Response) => {
 
     // const id = 1;
     const usuarioh = await UsuarioFn.buscarHorarioDelUsuario(id);
+    /* console.log(JSON.stringify(usuarioh)); */
 
     const resultado = usuarioh.map((item: any) => ({
+      fake: {
+        id: 1,
+        periodo: "2021-1",
+      },
+
       profesor: {
         id: item.profesor.id,
         nombre: item.profesor.nombre,
+        segundoNombre: item.profesor.segundoNombre,
         apellido: item.profesor.apellido,
+        segundoApellido: item.profesor.segundoApellido,
         cedula: item.profesor.cedula,
+        carrera:
+          item.profesor.carrera ||
+          "INGENIERIA EN INFORMATICA - INGENIERIA DE SISTEMAS",
       },
       materia: {
         id: item.materia.id,

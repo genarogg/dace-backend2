@@ -43,8 +43,6 @@ class UsuarioFn {
           where: { MateriaId: materiaId },
         });
 
-        console.log(horario);
-
         if (!horario) {
           throw new Error("Horario no encontrado");
         }

@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 import { generarToken, validarCapchat, extraerInfoUser } from "@fn";
 
-import { Usuario } from "@models";
+import { Usuario, BitacoraLogin } from "@models";
 
 const loginPost = async (req: Request, res: Response) => {
   // { correo: "example@gmail", contrasena: "123456", captcha: "123456}
@@ -37,7 +37,16 @@ const loginPost = async (req: Request, res: Response) => {
   const token = generarToken(usuario);
 
   //@Bitacora
-  /*   registrarInicio(req, usuario.id); */
+
+  const { ip, headers } = req;
+  const userAgent = headers["user-agent"];
+
+  await BitacoraLogin.create({
+    usuarioId: usuario.id,
+    fecha: new Date(), // Esto se establecerá automáticamente en tu modelo
+    ip,
+    userAgent,
+  });
 
   const infoUser = extraerInfoUser(usuario);
 
