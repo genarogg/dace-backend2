@@ -39,9 +39,11 @@ class UsuarioFn {
         const materiaId = obj.materia.id;
 
         // Busca el horario correspondiente en la base de datos
-        const horario = await Horario.findOne({
+        const horario = await Horario.findAll({
           where: { MateriaId: materiaId },
         });
+
+        console.log(horario);
 
         if (!horario) {
           throw new Error("Horario no encontrado");
@@ -55,13 +57,16 @@ class UsuarioFn {
       profesorData: any,
       horarios: any
     ) => {
+      // Aplana el array de arrays de horarios en un solo array
+      const horariosAplanados = horarios.flat();
+
       return profesorData.map((data: any) => {
-        const horario = horarios.find(
+        const horariosMateria = horariosAplanados.filter(
           (horario: any) => horario.MateriaId === data.materia.id
         );
         return {
           ...data,
-          horario: horario || null,
+          horarios: horariosMateria.length > 0 ? horariosMateria : null,
         };
       });
     };
