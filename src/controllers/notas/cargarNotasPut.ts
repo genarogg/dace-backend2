@@ -4,7 +4,13 @@ import { verificarToken } from "@fn";
 
 const cargarNotasPut = async (req: Request, res: Response) => {
   try {
-    const usuario = verificarToken(req.headers.authorization, res);
+    const token = req.headers.authorization;
+
+    if (!token) {
+      res.status(401).json({ error: "No se proporcionó token" });
+    }
+
+    const usuario = verificarToken(token);
 
     if (!usuario) {
       res.status(401).json({ error: "Token inválido" });
@@ -34,14 +40,13 @@ const cargarNotasPut = async (req: Request, res: Response) => {
     for (const estudiante of data.estudiantes) {
       // Comprueba si la nota del estudiante no es null
       if (estudiante.nota !== null) {
-       
-        console.log(estudiante.id, estudiante.nota)
+        console.log(estudiante.id, estudiante.nota);
         await EstudianteMateria.update(
           { nota: estudiante.nota }, // Actualiza el campo nota con el valor de estudiante.nota
           {
             where: {
               usuarioId: estudiante.id,
-                materiaId: data.materia
+              materiaId: data.materia,
             },
           }
         );

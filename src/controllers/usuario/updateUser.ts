@@ -7,7 +7,13 @@ import { verificarToken } from "@fn";
 
 const updateUser = async (req: Request, res: Response): Promise<any> => {
   try {
-    const usuario = verificarToken(req.headers.authorization, res);
+    const token = req.headers.authorization;
+
+    if (!token) {
+      res.status(401).json({ error: "No se proporcionó token" });
+    }
+
+    const usuario = verificarToken(token);
 
     if (!usuario) {
       res.status(401).json({ error: "Token inválido" });

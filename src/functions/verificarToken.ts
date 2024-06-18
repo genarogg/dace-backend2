@@ -1,23 +1,28 @@
-import { Response } from "express";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 
 interface Usuario {
   id: number;
 }
 
-const verificarToken = (
-  token: string | undefined,
-  res: Response
-): Usuario | null => {
+const verificarToken = (token: string | undefined): Usuario | null => {
+  const JWTSECRETO = process.env.JWTSECRETO || "jwt-secret";
+
   if (!token) {
-    res.status(401).json({ error: "No se proporcionó token" });
+    console.error("Token no proporcionado");
     return null;
   }
 
-  const JWTSECRETO = process.env.JWTSECRETO || "jwt-secret";
-
   try {
-    const usuario = jwt.verify(token, JWTSECRETO) as Usuario | null;
+    const payload = jwt.verify(token, JWTSECRETO) as JwtPayload | undefined;
+
+    if (!payload || !payload.id) {
+      console.error("El token no contiene un id de usuario válido");
+      return null;
+    }
+
+    const usuario: Usuario = {
+      id: payload.id,
+    };
 
     return usuario;
   } catch (err) {
