@@ -114,6 +114,7 @@ class UsuarioFn {
             id: materia.id,
             uc: materia.uc,
             seccion: materia.seccion,
+            semestre: materia.semestre,
           },
           profesor: {
             id: profesor.id,

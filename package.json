@@ -5,7 +5,8 @@
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register index.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register index.ts",
-    "clean": "rimraf ./src/config/db.sqlite && npm run dev"
+    "clean": "rimraf ./src/config/db.sqlite && npm run dev",
+    "build": "tsc"
   },
   "keywords": [],
   "author": {
@@ -15,6 +16,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "bcrypt": "^5.1.1",
     "chalk": "^4.1.2",
     "console-clear": "^1.1.1",
