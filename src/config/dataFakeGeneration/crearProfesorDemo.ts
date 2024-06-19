@@ -5,7 +5,9 @@ import { Usuario } from "@models";
 const crearProfesorDemo = async () => {
   const newUser = {
     nombre: "Ana",
+    segundoNombre: "Rosa",
     apellido: "Ramos",
+    segundoApellido: "Bolivar",
     cedula: "25074591",
     correo: "ana06rosa@gmail.com",
     telefono: "0412-1234567",

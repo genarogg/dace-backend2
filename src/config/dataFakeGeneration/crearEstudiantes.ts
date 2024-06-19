@@ -14,12 +14,22 @@ const crearEstudiantes = async (cantidad: number) => {
   }
 
   for (let i = 1; i <= cantidad; i++) {
-    const { nombre, apellido, cedula, correo, telefono } = usuario();
+    const {
+      nombre,
+      segundoNombre,
+      apellido,
+      segundoApellido,
+      cedula,
+      correo,
+      telefono,
+    } = usuario();
     const contrasena = await bcrypt.hash(`contrasena${i}`, 10);
 
     const newUser = {
       nombre,
+      segundoNombre,
       apellido,
+      segundoApellido,
       cedula,
       correo: correo + "@estudiante.com",
       telefono,

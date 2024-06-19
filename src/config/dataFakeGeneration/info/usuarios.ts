@@ -70,7 +70,10 @@ const usuario = () => {
   };
 
   const nombre = usuarioRandom(nombresLatinos);
+  const segundoNombre = usuarioRandom(nombresLatinos);
+
   const apellido = usuarioRandom(apellidosLatinos);
+  const segundoApellido = usuarioRandom(apellidosLatinos);
 
   const correo = `${nombre}${apellido}`;
 
@@ -80,7 +83,15 @@ const usuario = () => {
   //telefono celular aleatorio
   const telefono = `04${Math.floor(10000000 + Math.random() * 90000000)}`;
 
-  return { nombre, apellido, correo, cedula, telefono };
+  return {
+    nombre,
+    segundoNombre,
+    apellido,
+    segundoApellido,
+    correo,
+    cedula,
+    telefono,
+  };
 };
 
 export default usuario;
