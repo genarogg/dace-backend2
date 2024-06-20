@@ -5,4 +5,6 @@ import usuarioRouter from "./usuario";
 
 import notasRouter from "./notas";
 
-export { inicioRouter, authRouter, usuarioRouter, notasRouter };
+import listadoRouter from "./listado";
+
+export { inicioRouter, authRouter, usuarioRouter, notasRouter, listadoRouter };

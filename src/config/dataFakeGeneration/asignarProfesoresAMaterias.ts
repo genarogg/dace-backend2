@@ -22,7 +22,7 @@ const asignarProfesoresAMaterias = async () => {
     const materiasAsignadasDosVeces = await ProfesorMateria.findAll({
       attributes: ["MateriaId"],
       group: ["MateriaId"],
-      having: Sequelize.literal("count(MateriaId) >= 2"),
+      having: Sequelize.literal("count(MateriaId) >= 3"),
     });
     const idsMateriasAsignadasDosVeces = materiasAsignadasDosVeces.map(
       (materia) => materia.MateriaId
@@ -41,7 +41,7 @@ const asignarProfesoresAMaterias = async () => {
 
     // Asignar el profesor a las materias hasta que el profesor esté asignado a 2 materias
     // o no haya más materias disponibles
-    for (let i = 0; i < Math.min(2, materiasSinAsignar.length); i++) {
+    for (let i = 0; i < Math.min(3, materiasSinAsignar.length); i++) {
       await ProfesorMateria.create({
         UsuarioId: profesor.id,
         MateriaId: materiasSinAsignar[i].id,
