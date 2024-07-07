@@ -59,7 +59,7 @@ const registroPost = async (req: Request, res: Response) => {
 
         sendEmail({
           email: correo,
-          subject: "Reestablecer contraseña",
+          subject: "Bienvenid@ a la UNERG",
           templateName: "bienvenida",
           templateData: {},
         });

@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
-import { EstudianteMateria, Usuario } from "@models";
+import { EstudianteMateria, Usuario, Materia } from "@models";
 import { verificarToken } from "@fn";
+
+import { sendEmail } from "@email";
 
 const cargarNotasPut = async (req: Request, res: Response) => {
   try {
@@ -35,12 +37,13 @@ const cargarNotasPut = async (req: Request, res: Response) => {
 
     const data = req.body;
 
-    console.log(data);
+    let materiaInfo = await Materia.findByPk(data.materia);
+
+    const link = `${process.env.CORS_URL}`;
 
     for (const estudiante of data.estudiantes) {
       // Comprueba si la nota del estudiante no es null
       if (estudiante.nota !== null) {
-        console.log(estudiante.id, estudiante.nota);
         await EstudianteMateria.update(
           { nota: estudiante.nota }, // Actualiza el campo nota con el valor de estudiante.nota
           {
@@ -50,6 +53,34 @@ const cargarNotasPut = async (req: Request, res: Response) => {
             },
           }
         );
+
+        // Preparar los datos para el email
+        const user = await Usuario.findByPk(estudiante.id); // Asumiendo que el nombre está disponible en el objeto estudiante
+
+        const nota = estudiante.nota;
+
+        if (!user?.correo) {
+          console.log("El usuario no tiene correo");
+          continue;
+        }
+
+        if (
+          user.correo === "ana06rosa@gmail.com" ||
+          user.correo === "desarrollowebgg@gmail.com"
+        ) {
+          // Enviar email al estudiante
+          await sendEmail({
+            email: user.correo, // Asumiendo que el correo está disponible en el objeto estudiante
+            subject: "Tu nota ha sido cargada",
+            templateName: "notaCargada",
+            templateData: {
+              nombreEstudiante: user.nombre,
+              nombreMateria: materiaInfo?.nombre,
+              nota,
+              link,
+            },
+          });
+        }
       }
     }
 
