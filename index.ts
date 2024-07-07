@@ -24,6 +24,8 @@ const app = express();
 // Usa cors como middleware
 app.use(cors({ origin: CORS_URL }));
 
+console.log(CORS_URL)
+
 // Configurar el directorio public
 app.use(express.static("./src/public"));
 
