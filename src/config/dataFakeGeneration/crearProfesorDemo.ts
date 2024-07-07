@@ -26,7 +26,7 @@ const crearProfesorDemo = async () => {
     apellido: "Ramos",
     segundoApellido: "Bolivar",
     cedula: "25074591",
-    correo: "desarrollowebgg@gmail.com",
+    correo: "saiunerg@gmail.com",
     telefono: "0412-1234567",
     contrasena: await bcrypt.hash("#7654321Gx0", 10),
     esProfesor: 1,
