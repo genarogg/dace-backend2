@@ -13,7 +13,8 @@
       "@router": ["routers/index.ts"],
       "@models": ["models/index.ts"],
       "@db": ["config/db-conenction.ts"],
-      "@fn": ["functions/index.ts"]
+      "@fn": ["functions/index.ts"],
+      "@email":["email/index.ts"]
     }
   },
 

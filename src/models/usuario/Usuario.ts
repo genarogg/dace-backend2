@@ -11,6 +11,7 @@ class Usuario extends Model {
   public contrasena!: string;
   public createdAt!: Date;
   public sede!: string;
+  public status!: string;
 
   //información personal
   public nombre!: string;

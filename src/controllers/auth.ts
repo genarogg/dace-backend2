@@ -3,4 +3,12 @@ import { loginPost } from "./auth/login";
 
 import verificarTokenPost from "./auth/verificarToken";
 
-export { registroPost, loginPost, verificarTokenPost };
+import { resetPassPost, resetPassPut } from "./auth/resetPassPost";
+
+export {
+  registroPost,
+  loginPost,
+  verificarTokenPost,
+  resetPassPost,
+  resetPassPut,
+};

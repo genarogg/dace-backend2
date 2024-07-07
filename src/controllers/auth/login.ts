@@ -29,6 +29,10 @@ const loginPost = async (req: Request, res: Response) => {
     return res.status(400).json({ error: "Usuario no existe" });
   }
 
+  if (usuario.status === "inactive") {
+    return res.status(400).json({ error: "Usuario inactivo" });
+  }
+
   if (!bcrypt.compareSync(contrasena, usuario.contrasena)) {
     // La contraseña no coincide, envía una respuesta indicando que es incorrecta
     return res.status(400).json({ error: "Usuario o contraseña incorrectos" });

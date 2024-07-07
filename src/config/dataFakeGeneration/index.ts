@@ -37,7 +37,7 @@ const dataFakeGeneration = async (cantidad: number, url: string) => {
     await asignarProfesoresAMaterias();
     await asignarHorariosAMaterias();
 
-    await crearEstudiantes(cantidad * 5);
+    await crearEstudiantes(cantidad * 10);
     await asignarMateriasAEstudiante();
 
     await crearAdmin();
